@@ -1,0 +1,59 @@
+﻿@model AES256ED.Models.SecEntity
+
+<div class "container">
+    <div class"col-md-10 border-1">
+        <form asp-action="Encryt" method="post">
+            <h2>AES 265 Encryption & Decryption </h2>
+            <hr/>
+            <div class="row">
+                <div class="col-8">
+                    <label asp-for = "AESKey" class="control-label"></label>
+                    <input asp-for = "AESKey" class="form-control"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label asp-for="PlainText" class="control-label"></label>
+                    <input asp-for="PlainText" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label asp-for="AESIVKey" class="control-label"></label>
+                    <input asp-for="AESIVKey" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label asp-for="CipherText" class="control-label"></label>
+                    <input asp-for="CipherText" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label asp-for="CipherToPlainText" class="control-label"></label>
+                    <input asp-for="CipherToPlainText" class="form-control" />
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label asp-for="TimeToEncrypt" class="control-label"></label>
+                        <input asp-for="TimeToEncrypt" class="form-control disabled" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label asp-for="TimeToDecrypt" class="control-label"></label>
+                        <input asp-for="TimeToDecrypt" class="form-control disabled" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <a asp-action="GenerateKey" class="btn btn-primary m-1">Generate Key</a>
+                <input type ="submit" asp-action="Encrypt" value="Encrypt Data" class="btn btn-primary m-1" />
+                <input type ="submit" asp-action="Decrypt" value="Decrypt Data" class="btn btn-primary" />
+
+            </div>
+        </form>
+    </div>
+</div>
